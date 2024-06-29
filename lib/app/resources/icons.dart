@@ -1,0 +1,15 @@
+const bathtub="assets/icons/Bath tub.png";
+const calender="assets/icons/calender.png";
+const cancel="assets/icons/cancel.png";
+const chat="assets/icons/chat.png";
+const cloths="assets/icons/cloths.png";
+const cup="assets/icons/Cup.png";
+const dance="assets/icons/dance.png";
+const diaper="assets/icons/Diaper.png";
+const meal="assets/icons/meal.png";
+const rockandroll="assets/icons/Rock and Roll.png";
+const sendButton="assets/icons/sendbutton.png";
+const showerduck="assets/icons/Shower duck.png";
+const success="assets/icons/success.png";
+const support="assets/icons/support.png";
+const tick="assets/icons/tick.png";

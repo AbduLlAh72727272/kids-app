@@ -1,0 +1,35 @@
+name: kidslearning
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment: 
+  sdk: '>=3.4.0 <4.0.0'
+
+dependencies: 
+  cupertino_icons: ^1.0.6
+  http: ^1.2.1
+  velocity_x: ^4.2.1
+  flutter_easyloading: ^3.0.5
+  flutter_screenutil: ^5.9.3
+  intl: ^0.19.0
+  get: 4.6.6
+  flutter: 
+    sdk: flutter
+  image_picker: ^1.1.2
+  change_app_package_name: ^1.2.0
+  get_storage: ^2.1.1
+  google_fonts: ^6.2.1
+  
+
+dev_dependencies: 
+  flutter_lints: ^3.0.0
+  flutter_test: 
+    sdk: flutter
+
+flutter:
+  assets:
+  - assets/
+  - assets/images/
+  - assets/icons/
+  uses-material-design: true
+
