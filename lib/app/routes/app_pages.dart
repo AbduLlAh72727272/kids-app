@@ -1,15 +1,15 @@
 import 'package:get/get.dart';
-import 'package:kidslearning/app/modules/forgetPassword/bindings/forget_password_binding.dart';
-import 'package:kidslearning/app/modules/forgetPassword/views/forget_password_view.dart';
-import 'package:kidslearning/app/modules/signup/bindings/signup_binding.dart';
-import 'package:kidslearning/app/modules/signup/views/signup_view.dart';
 
-
+import '../modules/forgetPassword/bindings/forget_password_binding.dart';
+import '../modules/forgetPassword/views/forget_password_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/onBoarding/bindings/on_boarding_binding.dart';
+import '../modules/onBoarding/views/on_boarding_view.dart';
 import '../modules/signin/bindings/signin_binding.dart';
 import '../modules/signin/views/signin_view.dart';
-
+import '../modules/signup/bindings/signup_binding.dart';
+import '../modules/signup/views/signup_view.dart';
 import '../modules/splashScreen/bindings/splash_screen_binding.dart';
 import '../modules/splashScreen/views/splash_screen_view.dart';
 
@@ -36,17 +36,20 @@ class AppPages {
       page: () => const SigninView(),
       binding: SigninBinding(),
     ),
-     GetPage(
+    GetPage(
       name: _Paths.SIGNUP,
       page: () => const SignupView(),
       binding: SignupBinding(),
     ),
-     GetPage(
+    GetPage(
       name: _Paths.FORGETPASSWORD,
       page: () => const ForgetPasswordView(),
       binding: ForgetPasswordBinding(),
     ),
-   
-  
+    GetPage(
+      name: _Paths.ON_BOARDING,
+      page: () => const OnBoardingView(),
+      binding: OnBoardingBinding(),
+    ),
   ];
 }

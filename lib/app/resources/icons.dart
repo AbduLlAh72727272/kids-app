@@ -13,3 +13,5 @@ const showerduck="assets/icons/Shower duck.png";
 const success="assets/icons/success.png";
 const support="assets/icons/support.png";
 const tick="assets/icons/tick.png";
+const arrowdown="assets/icons/arrowdown.png";
+const signintext="assets/icons/signintext.png";

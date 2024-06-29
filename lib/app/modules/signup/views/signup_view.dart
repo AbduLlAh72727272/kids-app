@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import '../controllers/signup_controller.dart';
 
 class SignupView extends GetView<SignupController> {
-  const SignupView({Key? key}) : super(key: key);
+  const SignupView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

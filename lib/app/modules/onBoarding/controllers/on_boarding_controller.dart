@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-class SignupController extends GetxController {
-  //TODO: Implement SignupController
+class OnBoardingController extends GetxController {
+  //TODO: Implement OnBoardingController
 
   final count = 0.obs;
 

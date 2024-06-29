@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import '../controllers/forget_password_controller.dart';
 
 class ForgetPasswordView extends GetView<ForgetPasswordController> {
-  const ForgetPasswordView({Key? key}) : super(key: key);
+  const ForgetPasswordView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
