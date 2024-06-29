@@ -10,6 +10,7 @@ import 'package:kidslearning/app/customeWidgets/validators.dart';
 import 'package:kidslearning/app/resources/alignments.dart';
 import 'package:kidslearning/app/resources/colors.dart';
 import 'package:kidslearning/app/resources/icons.dart';
+import 'package:kidslearning/app/routes/app_pages.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../controllers/signin_controller.dart';
@@ -157,10 +158,11 @@ class SigninView extends GetView<SigninController> {
                   Center(
                       child: CustomTextButton(
                     text: "Forget Password",
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed(Routes.FORGETPASSWORD);
+                    },
                     textColor: redColor,
                     textSize: 15.sp,
-                    
                   ))
                 ],
               ),

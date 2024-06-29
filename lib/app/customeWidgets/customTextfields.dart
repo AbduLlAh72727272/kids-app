@@ -67,6 +67,7 @@ class CustomTextField extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class CustomTextFieldForPassword extends StatelessWidget {
   final String labelText;
   final String hintText;

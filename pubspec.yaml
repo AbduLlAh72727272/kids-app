@@ -19,6 +19,11 @@ dependencies:
   change_app_package_name: ^1.2.0
   get_storage: ^2.1.1
   google_fonts: ^6.2.1
+  flutter_local_notifications: ^17.2.1
+  pinput: ^5.0.0
+  otp_timer_button: ^1.1.1
+  flutter_rating_bar: ^4.0.1
+
   
 
 dev_dependencies: 
