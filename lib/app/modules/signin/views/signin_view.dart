@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:kidslearning/app/customeWidgets/backButton.dart';
 import 'package:kidslearning/app/customeWidgets/customButton.dart';
 import 'package:kidslearning/app/customeWidgets/customTextfields.dart';
-import 'package:kidslearning/app/customeWidgets/customtext.dart';
 import 'package:kidslearning/app/customeWidgets/customtextButton.dart';
 import 'package:kidslearning/app/customeWidgets/validators.dart';
 import 'package:kidslearning/app/resources/alignments.dart';
@@ -32,13 +32,7 @@ class SigninView extends GetView<SigninController> {
               child: Column(
                 crossAxisAlignment: crosstart,
                 children: [
-                  const Icon(Icons.arrow_back),
-                  20.heightBox,
-                  CustomText(
-                      text: "Sign In",
-                      fontSize: 26.sp,
-                      color: primaycolor,
-                      fontWeight: FontWeight.bold),
+                  backButton("Sign In"),
                   30.heightBox,
                   Form(
                     key: controller.formKey,

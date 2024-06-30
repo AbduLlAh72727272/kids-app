@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:kidslearning/app/customeWidgets/backButton.dart';
 import 'package:kidslearning/app/customeWidgets/customButton.dart';
 import 'package:kidslearning/app/customeWidgets/customTextfields.dart';
-import 'package:kidslearning/app/customeWidgets/customtext.dart';
 import 'package:kidslearning/app/customeWidgets/validators.dart';
 import 'package:kidslearning/app/resources/alignments.dart';
+
 import 'package:velocity_x/velocity_x.dart';
 
 import '../../../resources/colors.dart';
@@ -17,23 +17,15 @@ class ForgetPasswordView extends GetView<ForgetPasswordController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: false,
         backgroundColor: whitecolor,
         body: Padding(
           padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: crosstart,
             children: [
-              40.heightBox,
-              GestureDetector(onTap: (){
-                Get.back();
-              },child: const Icon(Icons.arrow_back)),
-              20.heightBox,
-              CustomText(
-                  text: "Forget Password",
-                  fontSize: 26.sp,
-                  color: primaycolor,
-                  fontWeight: FontWeight.bold),
+              50.heightBox,
+              backButton("Forget Password"),
               30.heightBox,
               Form(
                 key: controller.formKey,
@@ -50,8 +42,6 @@ class ForgetPasswordView extends GetView<ForgetPasswordController> {
                     if (controller.formKey.currentState!.validate()) {
                       controller.sentOtp();
                     }
-                   
-
                   }),
               100.heightBox,
             ],

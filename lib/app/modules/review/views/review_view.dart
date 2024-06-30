@@ -3,11 +3,9 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:kidslearning/app/customeWidgets/appBar.dart';
 import 'package:kidslearning/app/customeWidgets/customButton.dart';
-import 'package:kidslearning/app/customeWidgets/customtext.dart';
-import 'package:kidslearning/app/resources/alignments.dart';
 import 'package:kidslearning/app/resources/colors.dart';
-import 'package:kidslearning/app/resources/images.dart';
 import 'package:kidslearning/app/resources/paddings.dart';
 import 'package:kidslearning/app/routes/app_pages.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -25,26 +23,7 @@ class ReviewView extends GetView<ReviewController> {
       child: Column(
         children: [
           30.heightBox,
-          Row(
-            mainAxisAlignment: mainbetween,
-            children: [
-              Row(
-                children: [
-                  GestureDetector(
-                      onTap: () {}, child: const Icon(Icons.arrow_back)),
-                  10.widthBox,
-                  CustomText(
-                      text: "Add Review",
-                      fontSize: 22.sp,
-                      color: primaycolor,
-                      fontWeight: FontWeight.w600),
-                ],
-              ),
-              const CircleAvatar(
-                backgroundImage: AssetImage(introimg),
-              ),
-            ],
-          ),
+         appBar("Add Review"),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(

@@ -3,12 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kidslearning/app/customeWidgets/appBar.dart';
 import 'package:kidslearning/app/customeWidgets/customButton.dart';
 import 'package:kidslearning/app/customeWidgets/customtext.dart';
-import 'package:kidslearning/app/resources/alignments.dart';
 import 'package:kidslearning/app/resources/colors.dart';
 import 'package:kidslearning/app/resources/icons.dart';
-import 'package:kidslearning/app/resources/images.dart';
 import 'package:kidslearning/app/routes/app_pages.dart';
 import 'package:velocity_x/velocity_x.dart';
 import '../controllers/admin_support_controller.dart';
@@ -23,26 +22,7 @@ class AdminSupportView extends GetView<AdminSupportController> {
       child: Column(
         children: [
           30.heightBox,
-          Row(
-            mainAxisAlignment: mainbetween,
-            children: [
-              Row(
-                children: [
-                  GestureDetector(
-                      onTap: () {}, child: const Icon(Icons.arrow_back)),
-                  10.widthBox,
-                  CustomText(
-                      text: "Admin Support",
-                      fontSize: 22.sp,
-                      color: primaycolor,
-                      fontWeight: FontWeight.w600),
-                ],
-              ),
-              const CircleAvatar(
-                backgroundImage: AssetImage(introimg),
-              ),
-            ],
-          ),
+          appBar("Admin Support"),
           100.heightBox,
           Image.asset(
             support,
@@ -68,13 +48,12 @@ class AdminSupportView extends GetView<AdminSupportController> {
             ),
           ),
           const Spacer(),
-            CustomButton(
-                  text: "Start Chat",
-                  onPressed: () {
-                    // if (controller.formKey.currentState!.validate()) {}
-                    Get.toNamed(Routes.VERIFICATION_CODE);
-
-                  }),
+          CustomButton(
+              text: "Start Chat",
+              onPressed: () {
+                // if (controller.formKey.currentState!.validate()) {}
+                Get.toNamed(Routes.VERIFICATION_CODE);
+              }),
           100.heightBox,
         ],
       ),

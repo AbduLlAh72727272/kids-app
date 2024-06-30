@@ -18,7 +18,7 @@ class ChatScreenView extends GetView<ChatScreenController> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            // Handle back button press
+           Get.back();
           },
         ),
         actions: [

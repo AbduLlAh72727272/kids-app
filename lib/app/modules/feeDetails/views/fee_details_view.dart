@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:get/get.dart';
-import 'package:kidslearning/app/customeWidgets/customtext.dart';
-import 'package:kidslearning/app/resources/alignments.dart';
-import 'package:kidslearning/app/resources/colors.dart';
-import 'package:kidslearning/app/resources/images.dart';
+import 'package:kidslearning/app/customeWidgets/appBar.dart';
 import 'package:velocity_x/velocity_x.dart';
-
 import '../controllers/fee_details_controller.dart';
 
 class FeeDetailsView extends GetView<FeeDetailsController> {
@@ -20,26 +14,7 @@ class FeeDetailsView extends GetView<FeeDetailsController> {
       child: Column(
         children: [
           30.heightBox,
-          Row(
-            mainAxisAlignment: mainbetween,
-            children: [
-              Row(
-                children: [
-                  GestureDetector(
-                      onTap: () {}, child: const Icon(Icons.arrow_back)),
-                  10.widthBox,
-                  CustomText(
-                      text: "Fee Details",
-                      fontSize: 22.sp,
-                      color: primaycolor,
-                      fontWeight: FontWeight.w600),
-                ],
-              ),
-              const CircleAvatar(
-                backgroundImage: AssetImage(introimg),
-              ),
-            ],
-          ),
+         appBar("Fee Details"),
           Expanded(
             child: ListView.builder(
                 itemCount: 5,

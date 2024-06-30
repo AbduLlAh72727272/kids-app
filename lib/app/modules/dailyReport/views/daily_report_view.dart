@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:get/get.dart';
+import 'package:kidslearning/app/customeWidgets/appBar.dart';
 import 'package:kidslearning/app/customeWidgets/customtext.dart';
 import 'package:kidslearning/app/resources/alignments.dart';
 import 'package:kidslearning/app/resources/colors.dart';
 import 'package:kidslearning/app/resources/icons.dart';
-import 'package:kidslearning/app/resources/images.dart';
 import 'package:kidslearning/app/resources/paddings.dart';
 import 'package:velocity_x/velocity_x.dart';
-
 import '../controllers/daily_report_controller.dart';
 
 class DailyReportView extends GetView<DailyReportController> {
@@ -22,26 +20,7 @@ class DailyReportView extends GetView<DailyReportController> {
           padding: const EdgeInsets.all(16),
           child: ListView(
             children: [
-              Row(
-                mainAxisAlignment: mainbetween,
-                children: [
-                  Row(
-                    children: [
-                      GestureDetector(
-                          onTap: () {}, child: const Icon(Icons.arrow_back)),
-                      10.widthBox,
-                      CustomText(
-                          text: "Daily Report",
-                          fontSize: 22.sp,
-                          color: primaycolor,
-                          fontWeight: FontWeight.w600),
-                    ],
-                  ),
-                  const CircleAvatar(
-                    backgroundImage: AssetImage(introimg),
-                  ),
-                ],
-              ),
+             appBar("Daily Report"),
               20.heightBox,
               SizedBox(
                 width: 100.w,

@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
-import 'package:kidslearning/app/customeWidgets/customtext.dart';
-import 'package:kidslearning/app/resources/alignments.dart';
+import 'package:kidslearning/app/customeWidgets/appBar.dart';
 import 'package:kidslearning/app/resources/colors.dart';
-import 'package:kidslearning/app/resources/images.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../controllers/otherfiles_controller.dart';
@@ -21,26 +19,7 @@ class OtherfilesView extends GetView<OtherfilesController> {
       child: Column(
         children: [
           30.heightBox,
-          Row(
-            mainAxisAlignment: mainbetween,
-            children: [
-              Row(
-                children: [
-                  GestureDetector(
-                      onTap: () {}, child: const Icon(Icons.arrow_back)),
-                  10.widthBox,
-                  CustomText(
-                      text: "Other Files",
-                      fontSize: 22.sp,
-                      color: primaycolor,
-                      fontWeight: FontWeight.w600),
-                ],
-              ),
-              const CircleAvatar(
-                backgroundImage: AssetImage(introimg),
-              ),
-            ],
-          ),
+          appBar("Other Files"),
           Expanded(
             child: ListView.builder(
              

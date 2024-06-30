@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:kidslearning/app/customeWidgets/backButton.dart';
 import 'package:kidslearning/app/customeWidgets/customButton.dart';
 import 'package:kidslearning/app/resources/alignments.dart';
 import 'package:kidslearning/app/resources/colors.dart';
 import 'package:pinput/pinput.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:otp_timer_button/otp_timer_button.dart';
-import '../../../customeWidgets/customtext.dart';
 import '../controllers/verification_code_controller.dart';
 
 class VerificationCodeView extends GetView<VerificationCodeController> {
   VerificationCodeView({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,19 +20,8 @@ class VerificationCodeView extends GetView<VerificationCodeController> {
           crossAxisAlignment: crosstart,
           children: [
             40.heightBox,
-            GestureDetector(
-                onTap: () {
-                  Get.back();
-                },
-                child: const Icon(Icons.arrow_back)),
-            20.heightBox,
-            CustomText(
-                text: "Verification Code",
-                fontSize: 26.sp,
-                color: primaycolor,
-                fontWeight: FontWeight.bold),
-            30.heightBox,
-            50.heightBox,
+            backButton("Verification Code"),
+            80.heightBox,
             Center(
               child: Form(
                 key: controller.formKey,
@@ -45,8 +32,7 @@ class VerificationCodeView extends GetView<VerificationCodeController> {
                     separatorBuilder: (index) => const SizedBox(width: 8),
                     hapticFeedbackType: HapticFeedbackType.lightImpact,
                     onCompleted: (pin) {
-                       controller.verifyOtp();
-                       print(controller.pinputController.value.text);
+                      controller.verifyOtp();
                     },
                     cursor: Column(
                       mainAxisAlignment: mainend,
