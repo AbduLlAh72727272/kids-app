@@ -14,7 +14,7 @@ import '../controllers/authentication_success_controller.dart';
 
 class AuthenticationSuccessView
     extends GetView<AuthenticationSuccessController> {
-  const AuthenticationSuccessView({Key? key}) : super(key: key);
+  const AuthenticationSuccessView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +52,6 @@ class AuthenticationSuccessView
             CustomButton(
                 text: "Next",
                 onPressed: () {
-                  // if (controller.formKey.currentState!.validate()) {}
                   Get.toNamed(Routes.CREATENEWPASSWORD);
                 }),
             100.heightBox

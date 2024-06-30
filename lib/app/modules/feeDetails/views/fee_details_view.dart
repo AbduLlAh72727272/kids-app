@@ -11,7 +11,7 @@ import 'package:velocity_x/velocity_x.dart';
 import '../controllers/fee_details_controller.dart';
 
 class FeeDetailsView extends GetView<FeeDetailsController> {
-  const FeeDetailsView({Key? key}) : super(key: key);
+  const FeeDetailsView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +44,7 @@ class FeeDetailsView extends GetView<FeeDetailsController> {
             child: ListView.builder(
                 itemCount: 5,
                 itemBuilder: (context, index) {
-                  return PaymentInfoCard();
+                  return const PaymentInfoCard();
                 }),
           )
         ],
@@ -54,6 +54,8 @@ class FeeDetailsView extends GetView<FeeDetailsController> {
 }
 
 class PaymentInfoCard extends StatelessWidget {
+  const PaymentInfoCard({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Padding(

@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-class FeeDetailsController extends GetxController {
-  //TODO: Implement FeeDetailsController
+class DailyReportController extends GetxController {
+  //TODO: Implement DailyReportController
 
   final count = 0.obs;
 

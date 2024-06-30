@@ -14,7 +14,7 @@ import 'package:velocity_x/velocity_x.dart';
 import '../controllers/admin_support_controller.dart';
 
 class AdminSupportView extends GetView<AdminSupportController> {
-  const AdminSupportView({Key? key}) : super(key: key);
+  const AdminSupportView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,7 +67,7 @@ class AdminSupportView extends GetView<AdminSupportController> {
                   fontWeight: FontWeight.w300),
             ),
           ),
-          Spacer(),
+          const Spacer(),
             CustomButton(
                   text: "Start Chat",
                   onPressed: () {

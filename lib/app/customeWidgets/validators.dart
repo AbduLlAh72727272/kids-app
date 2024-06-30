@@ -21,10 +21,10 @@ static String? validatePassword(String? password) {
     return 'Password is required';
   }
 
-  // Check if password length is less than 8 characters
-  if (password.length < 8) {
-    return 'Password must be at least 8 characters long';
-  }
+  // // Check if password length is less than 8 characters
+  // if (password.length < 8) {
+  //   return 'Password must be at least 8 characters long';
+  // }
 
   // Return null if password is valid
   return null;

@@ -14,16 +14,15 @@ import 'package:velocity_x/velocity_x.dart';
 import '../controllers/createnewpassword_controller.dart';
 
 class CreatenewpasswordView extends GetView<CreatenewpasswordController> {
-  const CreatenewpasswordView({Key? key}) : super(key: key);
+  const CreatenewpasswordView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      backgroundColor: whitecolor,
+        resizeToAvoidBottomInset: false,
+        backgroundColor: whitecolor,
         body: Padding(
-      padding: const EdgeInsets.all(16),
-      child: 
-          Align(
+          padding: const EdgeInsets.all(16),
+          child: Align(
             alignment: Alignment.topLeft,
             child: Column(
               crossAxisAlignment: crosstart,
@@ -37,30 +36,36 @@ class CreatenewpasswordView extends GetView<CreatenewpasswordController> {
                     color: primaycolor,
                     fontWeight: FontWeight.bold),
                 30.heightBox,
-                CustomTextFieldForPassword(
-                    labelText: "New Password",
-                    hintText: "Enter new password",
-                    controller: controller.newpasswordController.value,
-                    validator: Validators.validatePassword),20.heightBox,
-                CustomTextFieldForPassword(
-                    labelText: "Confirm Password",
-                    hintText: "Enter confirm password",
-                    controller: controller.newpasswordController.value,
-                    validator: Validators.validatePassword),
-                    const Spacer(),
-                     CustomButton(
-                  text: "Confirm",
-                  onPressed: () {
-                    // if (controller.formKey.currentState!.validate()) {}
-                    Get.toNamed(Routes.SIGNIN);
-
-                  }),
-              100.heightBox,
+                Form(
+                  key: controller.formKey,
+                  child: Column(
+                    children: [
+                      CustomTextFieldForPassword(
+                          labelText: "New Password",
+                          hintText: "Enter new password",
+                          controller: controller.newpasswordController.value,
+                          validator: Validators.validatePassword),
+                      20.heightBox,
+                      CustomTextFieldForPassword(
+                          labelText: "Confirm Password",
+                          hintText: "Enter confirm password",
+                          controller: controller.confirmController.value,
+                          validator: Validators.validatePassword),
+                    ],
+                  ),
+                ),
+                const Spacer(),
+                CustomButton(
+                    text: "Confirm",
+                    onPressed: () {
+                      if (controller.formKey.currentState!.validate()) {
+                        controller.createNewPassword();
+                      }
+                    }),
+                100.heightBox,
               ],
             ),
           ),
-        
-      
-    ));
+        ));
   }
 }

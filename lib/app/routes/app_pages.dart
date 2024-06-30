@@ -4,8 +4,12 @@ import '../modules/AuthenticationSuccess/bindings/authentication_success_binding
 import '../modules/AuthenticationSuccess/views/authentication_success_view.dart';
 import '../modules/adminSupport/bindings/admin_support_binding.dart';
 import '../modules/adminSupport/views/admin_support_view.dart';
+import '../modules/chatScreen/bindings/chat_screen_binding.dart';
+import '../modules/chatScreen/views/chat_screen_view.dart';
 import '../modules/createnewpassword/bindings/createnewpassword_binding.dart';
 import '../modules/createnewpassword/views/createnewpassword_view.dart';
+import '../modules/dailyReport/bindings/daily_report_binding.dart';
+import '../modules/dailyReport/views/daily_report_view.dart';
 import '../modules/feeDetails/bindings/fee_details_binding.dart';
 import '../modules/feeDetails/views/fee_details_view.dart';
 import '../modules/forgetPassword/bindings/forget_password_binding.dart';
@@ -99,6 +103,16 @@ class AppPages {
       name: _Paths.REVIEW,
       page: () => const ReviewView(),
       binding: ReviewBinding(),
+    ),
+    GetPage(
+      name: _Paths.DAILY_REPORT,
+      page: () => const DailyReportView(),
+      binding: DailyReportBinding(),
+    ),
+    GetPage(
+      name: _Paths.CHAT_SCREEN,
+      page: () => const ChatScreenView(),
+      binding: ChatScreenBinding(),
     ),
   ];
 }

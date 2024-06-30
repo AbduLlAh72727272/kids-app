@@ -6,6 +6,7 @@ import 'package:kidslearning/app/customeWidgets/customtext.dart';
 import 'package:kidslearning/app/resources/alignments.dart';
 import 'package:kidslearning/app/resources/colors.dart';
 import 'package:kidslearning/app/resources/images.dart';
+import 'package:kidslearning/app/routes/app_pages.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../controllers/home_controller.dart';
@@ -42,17 +43,27 @@ class HomeView extends GetView<HomeController> {
           ),
 
           30.heightBox,
-          Image.asset(img1),
+          GestureDetector(onTap: (){
+            Get.toNamed(Routes.DAILY_REPORT);
+          },child: Image.asset(img1)),
          
-          Image.asset(img2),
+           GestureDetector(onTap: (){
+            Get.toNamed(Routes.FEE_DETAILS);
+          },child: Image.asset(img2)),
       
-          Image.asset(img3),
+          GestureDetector(onTap: (){
+            Get.toNamed(Routes.OTHERFILES);
+          },child: Image.asset(img3)),
        
-          Image.asset(img4),
+           GestureDetector(onTap: (){
+            Get.toNamed(Routes.CHAT_SCREEN);
+          },child: Image.asset(img4)),
          
           Padding(
             padding: const EdgeInsets.only(left: 6.0),
-            child: Image.asset(img5,),
+            child:  GestureDetector(onTap: (){
+            Get.toNamed(Routes.REVIEW);
+          },child: Image.asset(img5)),
           ),
           
 

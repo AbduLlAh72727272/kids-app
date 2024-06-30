@@ -18,6 +18,8 @@ abstract class Routes {
   static const OTHERFILES = _Paths.OTHERFILES;
   static const ADMIN_SUPPORT = _Paths.ADMIN_SUPPORT;
   static const REVIEW = _Paths.REVIEW;
+  static const DAILY_REPORT = _Paths.DAILY_REPORT;
+  static const CHAT_SCREEN = _Paths.CHAT_SCREEN;
 }
 
 abstract class _Paths {
@@ -35,4 +37,6 @@ abstract class _Paths {
   static const OTHERFILES = '/otherfiles';
   static const ADMIN_SUPPORT = '/admin-support';
   static const REVIEW = '/review';
+  static const DAILY_REPORT = '/daily-report';
+  static const CHAT_SCREEN = '/chat-screen';
 }

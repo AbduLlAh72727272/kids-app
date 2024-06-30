@@ -15,7 +15,7 @@ import 'package:velocity_x/velocity_x.dart';
 import '../controllers/review_controller.dart';
 
 class ReviewView extends GetView<ReviewController> {
-  const ReviewView({Key? key}) : super(key: key);
+  const ReviewView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -113,7 +113,7 @@ class ReviewView extends GetView<ReviewController> {
               ],
             ),
           ),
-          Spacer(),
+          const Spacer(),
             Padding(
               padding: const EdgeInsets.all(12),
               child: CustomButton(

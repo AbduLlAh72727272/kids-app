@@ -58,101 +58,103 @@ class SigninView extends GetView<SigninController> {
                           validator: Validators.validatePassword,
                           controller: controller.passwordController.value,
                         ),
+                        // 20.heightBox,
+                        // CustomText(
+                        //   text: 'Sign in as',
+                        //   fontSize: 16.sp,
+                        //   fontWeight: FontWeight.bold,
+                        //   color: const Color(0xff1F1E31),
+                        // ),
+                        // 10.heightBox,
+                        // Obx(() {
+                        //   return Stack(
+                        //     children: [
+                        //       TextFormField(
+                        //         readOnly: true,
+                        //         decoration: InputDecoration(
+                        //           hintText: controller.selectedValue.value,
+                        //           hintStyle: const TextStyle(
+                        //             color: Colors.grey,
+                        //             fontSize: 14,
+                        //             fontWeight: FontWeight.w400,
+                        //           ),
+                        //           focusedBorder: const OutlineInputBorder(
+                        //             borderSide: BorderSide(
+                        //               color: textfieldgrey,
+                        //               width: 2,
+                        //             ),
+                        //             borderRadius:
+                        //                 BorderRadius.all(Radius.circular(10)),
+                        //           ),
+                        //           enabledBorder: const OutlineInputBorder(
+                        //             borderSide: BorderSide(
+                        //               color: greyColor,
+                        //             ),
+                        //             borderRadius:
+                        //                 BorderRadius.all(Radius.circular(10)),
+                        //           ),
+                        //           border: const OutlineInputBorder(
+                        //             borderSide: BorderSide(color: greyColor),
+                        //             borderRadius:
+                        //                 BorderRadius.all(Radius.circular(10)),
+                        //           ),
+                        //           contentPadding:
+                        //               const EdgeInsets.only(left: 10, top: 0),
+                        //         ),
+                        //       ),
+                        //       Positioned(
+                        //         right: 20,
+                        //         top: 0,
+                        //         bottom: 0,
+                        //         child: DropdownButtonHideUnderline(
+                        //           child: DropdownButton<String>(
+                        //             borderRadius: BorderRadius.circular(20),
+                        //             dropdownColor: whitecolor,
+                        //             icon: Padding(
+                        //                 padding:
+                        //                     const EdgeInsets.only(right: 8.0),
+                        //                 child: Image.asset(
+                        //                   arrowdown,
+                        //                   height: 15,
+                        //                   width: 15,
+                        //                   color: textfieldgrey,
+                        //                 )),
+                        //             items: <String>['Parent', 'Admin', 'Nanny']
+                        //                 .map((String value) {
+                        //               return DropdownMenuItem<String>(
+                        //                 value: value,
+                        //                 child: CustomText(
+                        //                   color: textfieldgrey,
+                        //                   fontWeight: FontWeight.normal,
+                        //                   fontSize: 14.sp,
+                        //                   text: value,
+                        //                 ),
+                        //               );
+                        //             }).toList(),
+                        //             onChanged: (newValue) {
+                        //               if (newValue != null) {
+                        //                 controller.selectedValue.value =
+                        //                     newValue;
+                        //               }
+                        //             },
+                        //           ),
+                        //         ),
+                        //       ),
+                        //     ],
+                        //   );
+                        // }),
                         20.heightBox,
-                        CustomText(
-                          text: 'Sign in as',
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.bold,
-                          color: const Color(0xff1F1E31),
-                        ),
-                        10.heightBox,
-                        Obx(() {
-                          return Stack(
-                            children: [
-                              TextFormField(
-                                readOnly: true,
-                                decoration: InputDecoration(
-                                  hintText: controller.selectedValue.value,
-                                  hintStyle: const TextStyle(
-                                    color: Colors.grey,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                  focusedBorder: const OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: textfieldgrey,
-                                      width: 2,
-                                    ),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(10)),
-                                  ),
-                                  enabledBorder: const OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: greyColor,
-                                    ),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(10)),
-                                  ),
-                                  border: const OutlineInputBorder(
-                                    borderSide: BorderSide(color: greyColor),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(10)),
-                                  ),
-                                  contentPadding:
-                                      const EdgeInsets.only(left: 10, top: 0),
-                                ),
-                              ),
-                              Positioned(
-                                right: 20,
-                                top: 0,
-                                bottom: 0,
-                                child: DropdownButtonHideUnderline(
-                                  child: DropdownButton<String>(
-                                    borderRadius: BorderRadius.circular(20),
-                                    dropdownColor: whitecolor,
-                                    icon: Padding(
-                                        padding:
-                                            const EdgeInsets.only(right: 8.0),
-                                        child: Image.asset(
-                                          arrowdown,
-                                          height: 15,
-                                          width: 15,
-                                          color: textfieldgrey,
-                                        )),
-                                    items: <String>['Parent', 'Admin', 'Nanny']
-                                        .map((String value) {
-                                      return DropdownMenuItem<String>(
-                                        value: value,
-                                        child: CustomText(
-                                          color: textfieldgrey,
-                                          fontWeight: FontWeight.normal,
-                                          fontSize: 14.sp,
-                                          text: value,
-                                        ),
-                                      );
-                                    }).toList(),
-                                    onChanged: (newValue) {
-                                      if (newValue != null) {
-                                        controller.selectedValue.value =
-                                            newValue;
-                                      }
-                                    },
-                                  ),
-                                ),
-                              ),
-                            ],
-                          );
-                        }),
-                        40.heightBox,
                         Image.asset(signintext),
                       ],
                     ),
                   ),
-                  50.heightBox,
+                  100.heightBox,
                   CustomButton(
                       text: "Sign In",
                       onPressed: () {
-                        if (controller.formKey.currentState!.validate()) {}
+                        if (controller.formKey.currentState!.validate()) {
+                          controller.signInUser();
+                        }
                       }),
                   10.heightBox,
                   Center(

@@ -9,7 +9,7 @@ class CustomTextButton extends StatelessWidget {
   // final double borderRadius;
   // final double padding;
 
-  const CustomTextButton({
+  const CustomTextButton({super.key, 
 
     required this.text,
     required this.onPressed,

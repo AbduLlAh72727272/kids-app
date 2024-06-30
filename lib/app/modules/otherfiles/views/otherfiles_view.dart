@@ -11,7 +11,7 @@ import 'package:velocity_x/velocity_x.dart';
 import '../controllers/otherfiles_controller.dart';
 
 class OtherfilesView extends GetView<OtherfilesController> {
-  const OtherfilesView({Key? key}) : super(key: key);
+  const OtherfilesView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,7 +62,7 @@ class OtherfilesView extends GetView<OtherfilesController> {
 class CourseTile extends StatelessWidget {
   final String title;
 
-  CourseTile({required this.title});
+  const CourseTile({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {

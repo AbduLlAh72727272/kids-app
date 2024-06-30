@@ -7,7 +7,6 @@ import 'package:kidslearning/app/customeWidgets/customTextfields.dart';
 import 'package:kidslearning/app/customeWidgets/customtext.dart';
 import 'package:kidslearning/app/customeWidgets/validators.dart';
 import 'package:kidslearning/app/resources/alignments.dart';
-import 'package:kidslearning/app/routes/app_pages.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../../../resources/colors.dart';
@@ -18,6 +17,7 @@ class ForgetPasswordView extends GetView<ForgetPasswordController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
         backgroundColor: whitecolor,
         body: Padding(
           padding: const EdgeInsets.all(16),
@@ -47,8 +47,10 @@ class ForgetPasswordView extends GetView<ForgetPasswordController> {
               CustomButton(
                   text: "Next",
                   onPressed: () {
-                    // if (controller.formKey.currentState!.validate()) {}
-                    Get.toNamed(Routes.VERIFICATION_CODE);
+                    if (controller.formKey.currentState!.validate()) {
+                      controller.sentOtp();
+                    }
+                   
 
                   }),
               100.heightBox,
