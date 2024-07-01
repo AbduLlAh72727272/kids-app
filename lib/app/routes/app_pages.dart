@@ -1,35 +1,47 @@
 import 'package:get/get.dart';
 
-import '../modules/AuthenticationSuccess/bindings/authentication_success_binding.dart';
-import '../modules/AuthenticationSuccess/views/authentication_success_view.dart';
-import '../modules/adminSupport/bindings/admin_support_binding.dart';
-import '../modules/adminSupport/views/admin_support_view.dart';
-import '../modules/chatScreen/bindings/chat_screen_binding.dart';
-import '../modules/chatScreen/views/chat_screen_view.dart';
-import '../modules/createnewpassword/bindings/createnewpassword_binding.dart';
-import '../modules/createnewpassword/views/createnewpassword_view.dart';
-import '../modules/dailyReport/bindings/daily_report_binding.dart';
-import '../modules/dailyReport/views/daily_report_view.dart';
-import '../modules/feeDetails/bindings/fee_details_binding.dart';
-import '../modules/feeDetails/views/fee_details_view.dart';
-import '../modules/forgetPassword/bindings/forget_password_binding.dart';
-import '../modules/forgetPassword/views/forget_password_view.dart';
-import '../modules/home/bindings/home_binding.dart';
-import '../modules/home/views/home_view.dart';
-import '../modules/onBoarding/bindings/on_boarding_binding.dart';
-import '../modules/onBoarding/views/on_boarding_view.dart';
-import '../modules/otherfiles/bindings/otherfiles_binding.dart';
-import '../modules/otherfiles/views/otherfiles_view.dart';
-import '../modules/review/bindings/review_binding.dart';
-import '../modules/review/views/review_view.dart';
-import '../modules/signin/bindings/signin_binding.dart';
-import '../modules/signin/views/signin_view.dart';
-import '../modules/signup/bindings/signup_binding.dart';
-import '../modules/signup/views/signup_view.dart';
-import '../modules/splashScreen/bindings/splash_screen_binding.dart';
-import '../modules/splashScreen/views/splash_screen_view.dart';
-import '../modules/verificationCode/bindings/verification_code_binding.dart';
-import '../modules/verificationCode/views/verification_code_view.dart';
+import '../modules/Nanny/NannyDetails/bindings/nanny_details_binding.dart';
+import '../modules/Nanny/NannyDetails/views/nanny_details_view.dart';
+import '../modules/Nanny/attendance/bindings/attendance_binding.dart';
+import '../modules/Nanny/attendance/views/attendance_view.dart';
+import '../modules/Nanny/feedback/bindings/feedback_binding.dart';
+import '../modules/Nanny/feedback/views/feedback_view.dart';
+import '../modules/Nanny/nannyHomePage/bindings/nanny_home_page_binding.dart';
+import '../modules/Nanny/nannyHomePage/views/nanny_home_page_view.dart';
+import '../modules/Nanny/scannedScreen/bindings/scanned_screen_binding.dart';
+import '../modules/Nanny/scannedScreen/views/scanned_screen_view.dart';
+import '../modules/Nanny/actvities/bindings/actvities_binding.dart';
+import '../modules/Nanny/actvities/views/actvities_view.dart';
+import '../modules/commonPages/AuthenticationSuccess/bindings/authentication_success_binding.dart';
+import '../modules/commonPages/AuthenticationSuccess/views/authentication_success_view.dart';
+import '../modules/commonPages/createnewpassword/bindings/createnewpassword_binding.dart';
+import '../modules/commonPages/createnewpassword/views/createnewpassword_view.dart';
+import '../modules/commonPages/forgetPassword/bindings/forget_password_binding.dart';
+import '../modules/commonPages/forgetPassword/views/forget_password_view.dart';
+import '../modules/commonPages/onBoarding/bindings/on_boarding_binding.dart';
+import '../modules/commonPages/onBoarding/views/on_boarding_view.dart';
+import '../modules/commonPages/signin/bindings/signin_binding.dart';
+import '../modules/commonPages/signin/views/signin_view.dart';
+import '../modules/commonPages/signup/bindings/signup_binding.dart';
+import '../modules/commonPages/signup/views/signup_view.dart';
+import '../modules/commonPages/splashScreen/bindings/splash_screen_binding.dart';
+import '../modules/commonPages/splashScreen/views/splash_screen_view.dart';
+import '../modules/commonPages/verificationCode/bindings/verification_code_binding.dart';
+import '../modules/commonPages/verificationCode/views/verification_code_view.dart';
+import '../modules/parent/adminSupport/bindings/admin_support_binding.dart';
+import '../modules/parent/adminSupport/views/admin_support_view.dart';
+import '../modules/parent/chatScreen/bindings/chat_screen_binding.dart';
+import '../modules/parent/chatScreen/views/chat_screen_view.dart';
+import '../modules/parent/dailyReport/bindings/daily_report_binding.dart';
+import '../modules/parent/dailyReport/views/daily_report_view.dart';
+import '../modules/parent/feeDetails/bindings/fee_details_binding.dart';
+import '../modules/parent/feeDetails/views/fee_details_view.dart';
+import '../modules/parent/home/bindings/home_binding.dart';
+import '../modules/parent/home/views/home_view.dart';
+import '../modules/parent/otherfiles/bindings/otherfiles_binding.dart';
+import '../modules/parent/otherfiles/views/otherfiles_view.dart';
+import '../modules/parent/review/bindings/review_binding.dart';
+import '../modules/parent/review/views/review_view.dart';
 
 part 'app_routes.dart';
 
@@ -113,6 +125,36 @@ class AppPages {
       name: _Paths.CHAT_SCREEN,
       page: () => const ChatScreenView(),
       binding: ChatScreenBinding(),
+    ),
+    GetPage(
+      name: _Paths.NANNY_HOME_PAGE,
+      page: () => const NannyHomePageView(),
+      binding: NannyHomePageBinding(),
+    ),
+    GetPage(
+      name: _Paths.ATTENDANCE,
+      page: () => const AttendanceView(),
+      binding: AttendanceBinding(),
+    ),
+    GetPage(
+      name: _Paths.SCANNED_SCREEN,
+      page: () => const ScannedScreenView(),
+      binding: ScannedScreenBinding(),
+    ),
+    GetPage(
+      name: _Paths.FEEDBACK,
+      page: () => const FeedbackView(),
+      binding: FeedbackBinding(),
+    ),
+    GetPage(
+      name: _Paths.NANNY_DETAILS,
+      page: () => const NannyDetailsView(),
+      binding: NannyDetailsBinding(),
+    ),
+    GetPage(
+      name: _Paths.ACTVITIES,
+      page: () => const ActvitiesView(),
+      binding: ActvitiesBinding(),
     ),
   ];
 }

@@ -13,9 +13,11 @@ Widget appBar(String appBarName) {
     children: [
       Row(
         children: [
-          GestureDetector(onTap: () {
-            Get.back();
-          }, child: const Icon(Icons.arrow_back)),
+          GestureDetector(
+              onTap: () {
+                Get.back();
+              },
+              child: const Icon(Icons.arrow_back)),
           10.widthBox,
           CustomText(
               text: appBarName,

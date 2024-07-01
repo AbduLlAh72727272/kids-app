@@ -30,7 +30,14 @@ class AuthRepository {
             signInResponseModelToJson(SignInResponseModel.fromJson(data)));
         box.write(userToken, data['token']);
         EasyLoading.dismiss();
+       var role= signInResponseModelFromJson(box.read(userInformation)).user!.role;
+       if(role=="parent"){
         Get.offAllNamed(Routes.HOME);
+       }
+       else{
+        Get.offAllNamed(Routes.NANNY_HOME_PAGE);
+       }
+
       } else {
         EasyLoading.dismiss();
         Utils.snakbar(

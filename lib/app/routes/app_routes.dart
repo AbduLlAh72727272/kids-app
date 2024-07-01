@@ -20,6 +20,12 @@ abstract class Routes {
   static const REVIEW = _Paths.REVIEW;
   static const DAILY_REPORT = _Paths.DAILY_REPORT;
   static const CHAT_SCREEN = _Paths.CHAT_SCREEN;
+  static const NANNY_HOME_PAGE = _Paths.NANNY_HOME_PAGE;
+  static const ATTENDANCE = _Paths.ATTENDANCE;
+  static const SCANNED_SCREEN = _Paths.SCANNED_SCREEN;
+  static const FEEDBACK = _Paths.FEEDBACK;
+  static const NANNY_DETAILS = _Paths.NANNY_DETAILS;
+  static const ACTVITIES = _Paths.ACTVITIES;
 }
 
 abstract class _Paths {
@@ -39,4 +45,10 @@ abstract class _Paths {
   static const REVIEW = '/review';
   static const DAILY_REPORT = '/daily-report';
   static const CHAT_SCREEN = '/chat-screen';
+  static const NANNY_HOME_PAGE = '/nanny-home-page';
+  static const ATTENDANCE = '/attendance';
+  static const SCANNED_SCREEN = '/scanned-screen';
+  static const FEEDBACK = '/feedback';
+  static const NANNY_DETAILS = '/nanny-details';
+  static const ACTVITIES = '/actvities';
 }

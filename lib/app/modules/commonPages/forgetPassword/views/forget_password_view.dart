@@ -9,7 +9,7 @@ import 'package:kidslearning/app/resources/alignments.dart';
 
 import 'package:velocity_x/velocity_x.dart';
 
-import '../../../resources/colors.dart';
+import '../../../../resources/colors.dart';
 import '../controllers/forget_password_controller.dart';
 
 class ForgetPasswordView extends GetView<ForgetPasswordController> {
