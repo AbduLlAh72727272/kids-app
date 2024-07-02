@@ -13,28 +13,55 @@ class OtherfilesView extends GetView<OtherfilesController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: whitecolor,
+        backgroundColor: whitecolor,
         body: Padding(
-      padding: const EdgeInsets.all(16),
-      child: Column(
-        children: [
-          30.heightBox,
-          appBar("Other Files"),
-          Expanded(
-            child: ListView.builder(
-             
-              itemCount: controller.courses.length,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.only(bottom: 16.0),
-                  child: CourseTile(title: controller.courses[index]),
-                );
-              },
-            ),
-          )
-        ],
-      ),
-    ));
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            children: [
+              30.heightBox,
+              appBar("Other Files"),
+              Obx(
+                () => controller.isLoading.value != true
+                    ? Expanded(
+                        child: ListView.builder(
+                          itemCount: controller.getfiles.length,
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(bottom: 16.0),
+                              child: GestureDetector(
+                                      onTap: () {
+                                        controller.downloadFile(
+                                            controller
+                                                .getfiles[index].fileLink!,
+                                            controller.getfiles[index].name);
+                                      },
+                                      child: SizedBox(
+                                        height: 60,
+                                        child: Center(
+                                          child: Text(
+                                            controller.getfiles[index].name
+                                                .toString(),
+                                            style: TextStyle(
+                                                color: blackcolor,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 16.sp),
+                                          ),
+                                        ),
+                                      ))
+                                  .box
+                                  .white
+                                  .outerShadow
+                                  .roundedSM
+                                  .makeCentered(),
+                            );
+                          },
+                        ),
+                      )
+                    : const SizedBox.shrink(),
+              )
+            ],
+          ),
+        ));
   }
 }
 
@@ -57,25 +84,29 @@ class CourseTile extends StatelessWidget {
           ),
         ],
       ),
-      child: ExpansionTile(
-        title: Row(
+      child: GestureDetector(
+        onTap: () {},
+        child: ExpansionTile(
+          title: Row(
+            children: [
+              const Icon(Icons.school, color: Colors.deepPurple),
+              const SizedBox(width: 8),
+              Text(
+                title,
+                style: TextStyle(color: Colors.black87, fontSize: 14.sp),
+              ),
+            ],
+          ),
+          trailing:
+              const Icon(Icons.keyboard_arrow_down, color: Colors.black54),
           children: [
-            const Icon(Icons.school, color: Colors.deepPurple),
-            const SizedBox(width: 8),
-            Text(
-              title,
-              style: TextStyle(color: Colors.black87,fontSize: 14.sp),
+            // Add additional details or actions for each course here
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text("Details about $title"),
             ),
           ],
         ),
-        trailing: const Icon(Icons.keyboard_arrow_down, color: Colors.black54),
-        children: [
-          // Add additional details or actions for each course here
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text("Details about $title"),
-          ),
-        ],
       ),
     );
   }

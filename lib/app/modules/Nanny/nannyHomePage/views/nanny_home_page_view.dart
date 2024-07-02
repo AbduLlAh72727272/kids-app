@@ -9,7 +9,7 @@ import 'package:velocity_x/velocity_x.dart';
 import '../controllers/nanny_home_page_controller.dart';
 
 class NannyHomePageView extends GetView<NannyHomePageController> {
-  const NannyHomePageView({Key? key}) : super(key: key);
+  const NannyHomePageView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,10 +24,12 @@ class NannyHomePageView extends GetView<NannyHomePageController> {
           },child: Image.asset("assets/images/location.png")),
           10.heightBox,
           GestureDetector(onTap: (){
-             Get.toNamed(Routes.ATTENDANCE);
+             Get.toNamed(Routes.ACTVITIES);
           },child: Image.asset("assets/images/education.png")),
             10.heightBox,
-          Image.asset("assets/images/5.png"),
+          GestureDetector(onTap: (){
+            Get.toNamed(Routes.FEEDBACK);
+          },child: Image.asset("assets/images/feedback.png")),
 
 
         ],),

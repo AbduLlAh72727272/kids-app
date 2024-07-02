@@ -44,7 +44,7 @@ class HomeView extends GetView<HomeController> {
 
           30.heightBox,
           GestureDetector(onTap: (){
-            Get.toNamed(Routes.DAILY_REPORT);
+            Get.toNamed(Routes.DAILY_REPORT,);
           },child: Image.asset(img1)),
          
            GestureDetector(onTap: (){

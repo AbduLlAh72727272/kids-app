@@ -12,7 +12,7 @@ import 'package:velocity_x/velocity_x.dart';
 import '../controllers/attendance_controller.dart';
 
 class AttendanceView extends GetView<AttendanceController> {
-  const AttendanceView({Key? key}) : super(key: key);
+  const AttendanceView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

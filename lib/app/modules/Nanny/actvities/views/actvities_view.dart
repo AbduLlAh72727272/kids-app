@@ -13,7 +13,7 @@ import 'package:velocity_x/velocity_x.dart';
 import '../controllers/actvities_controller.dart';
 
 class ActvitiesView extends GetView<ActvitiesController> {
-  const ActvitiesView({Key? key}) : super(key: key);
+  const ActvitiesView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,8 +38,9 @@ class ActvitiesView extends GetView<ActvitiesController> {
                             color: blackcolor,
                             fontWeight: FontWeight.bold),
                         TextField(
+                          style: const TextStyle(color: blackcolor),
                           decoration: InputDecoration(
-                              hintText: "Select",
+                              hintText: "Enter name",
                               hintStyle: TextStyle(
                                   fontSize: 14.sp,
                                   color: blackcolor,
@@ -169,14 +170,13 @@ class ActvitiesView extends GetView<ActvitiesController> {
                   )
                 ],
               ),
-              20.heightBox,
+              30.heightBox,
               Column(
                 crossAxisAlignment: crossend,
                 children: [
                   SizedBox(
                     width: 130.w,
                     child: Row(
-                  
                       mainAxisAlignment: mainend,
                       children: [
                         Text(

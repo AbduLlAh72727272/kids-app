@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (_, child) {
+          
         return GetMaterialApp(
           builder: EasyLoading.init(),
           debugShowCheckedModeBanner: false,
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
           getPages: AppPages.routes,
-          initialRoute: Routes.ACTVITIES,
+          initialRoute: Routes.SPLASH_SCREEN,
           home: child,
         );
       },

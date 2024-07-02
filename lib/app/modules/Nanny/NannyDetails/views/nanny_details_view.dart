@@ -13,7 +13,7 @@ import 'package:velocity_x/velocity_x.dart';
 import '../controllers/nanny_details_controller.dart';
 
 class NannyDetailsView extends GetView<NannyDetailsController> {
-  const NannyDetailsView({Key? key}) : super(key: key);
+  const NannyDetailsView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

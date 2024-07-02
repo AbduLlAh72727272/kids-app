@@ -12,7 +12,7 @@ import 'package:velocity_x/velocity_x.dart';
 import '../controllers/scanned_screen_controller.dart';
 
 class ScannedScreenView extends GetView<ScannedScreenController> {
-  const ScannedScreenView({Key? key}) : super(key: key);
+  const ScannedScreenView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,11 +1,26 @@
 import 'package:get/get.dart';
+import 'package:kidslearning/app/data/getmodels/getFeeModel.dart';
+import 'package:kidslearning/app/repositories/parentRepository.dart';
 
 class FeeDetailsController extends GetxController {
-  //TODO: Implement FeeDetailsController
+  ParentRepository parentRepository = ParentRepository();
 
-  final count = 0.obs;
+  List<GetFeeModel> getfeeSlips = <GetFeeModel>[].obs;
+  var isLoading = false.obs;
+  Future<void> getFeeSlips() async {
+    try {
+      isLoading.value = true;
+      getfeeSlips = await parentRepository.fetchFeeSlips();
 
+    } finally {
+      isLoading.value = false;
+    }
+  }
 
-
-  void increment() => count.value++;
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+    getFeeSlips();
+  }
 }

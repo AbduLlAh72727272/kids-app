@@ -9,7 +9,7 @@ import 'package:velocity_x/velocity_x.dart';
 import '../controllers/feedback_controller.dart';
 
 class FeedbackView extends GetView<FeedbackController> {
-  const FeedbackView({Key? key}) : super(key: key);
+  const FeedbackView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,11 +1,15 @@
 import 'package:get/get.dart';
+import 'package:kidslearning/app/data/getmodels/getActivitiesModel.dart';
+
+import '../../../../repositories/parentRepository.dart';
 
 class DailyReportController extends GetxController {
-  //TODO: Implement DailyReportController
+  ParentRepository parentRepository = ParentRepository();
 
-  final count = 0.obs;
+  List<GetActivitiesModel> getActivitiesModel = <GetActivitiesModel>[].obs;
 
-
-
-  void increment() => count.value++;
+  Future<List<GetActivitiesModel>> getactivites() async {
+    getActivitiesModel = await parentRepository.fetchActivities();
+    return getActivitiesModel;
+  }
 }
