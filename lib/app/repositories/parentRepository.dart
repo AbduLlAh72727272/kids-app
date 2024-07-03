@@ -9,6 +9,7 @@ import 'package:kidslearning/app/data/getmodels/getFeeModel.dart';
 import 'package:kidslearning/app/data/getmodels/getFilesModel.dart';
 import 'package:kidslearning/app/resources/apiKeys.dart';
 import 'package:kidslearning/app/resources/colors.dart';
+import 'package:kidslearning/app/resources/localStorage.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
 
@@ -20,13 +21,13 @@ class ParentRepository {
         Uri.parse(getActivitiesUrl),
         headers: {
           'Authorization':
-              'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzE5ODYxNTEyLCJleHAiOjE3MjI0NTM1MTJ9.QpDo1YOpO1lJWDH5JZVaMgFQANos03-O_5z9w7Q3khE',
+              'Bearer ${sharedPrefbox.read(userToken)}',
         },
       );
 
       if (response.statusCode == 200) {
         // Process the response body if needed
-
+print(response.body);
         List<GetActivitiesModel> activities =
             getActivitiesModelFromJson(response.body);
 
@@ -48,7 +49,7 @@ class ParentRepository {
         Uri.parse(getFeeUrl),
         headers: {
           'Authorization':
-              'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzE5ODYxNTEyLCJleHAiOjE3MjI0NTM1MTJ9.QpDo1YOpO1lJWDH5JZVaMgFQANos03-O_5z9w7Q3khE',
+              'Bearer ${sharedPrefbox.read(userToken)}',
         },
       );
 
@@ -75,7 +76,7 @@ class ParentRepository {
         Uri.parse(getFilesUrl),
         headers: {
           'Authorization':
-              'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzE5OTQ5MTYzLCJleHAiOjE3MjI1NDExNjN9.fMcFHDHDAFlQTneJz_MOrKnEeGHY-WjViYOvO7Fz-nU',
+              'Bearer ${sharedPrefbox.read(userToken)}',
         },
       );
 
@@ -140,4 +141,6 @@ class ParentRepository {
       throw Exception('Error converting file to PDF');
     }
   }
+
+
 }

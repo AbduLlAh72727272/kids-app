@@ -55,6 +55,21 @@ class DailyReportView extends GetView<DailyReportController> {
                           child: Text("Not found"),
                         );
                       }
+                      else if (snapshot.data!.isEmpty) {
+                        return  Center(
+                          child:Column(
+                            children: [
+                              Image.network("https://cdn-icons-png.freepik.com/512/7466/7466073.png",width: 100,height: 100,),
+                              20.heightBox,
+                              CustomText(
+                                    text: "Activity is not uploaded yet.",
+                                    fontSize: 14.sp,
+                                    color: primaycolor,
+                                    fontWeight: FontWeight.w500),
+                            ],
+                          ),
+                        );
+                      }
                       return Column(
                         children: [
                           Center(

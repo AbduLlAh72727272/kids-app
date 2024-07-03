@@ -9,14 +9,14 @@ class SplashScreenController extends GetxController {
     super.onInit();
     Future.delayed(const Duration(seconds: 2), () {
     
-      if (box.read(userToken) != null &&
-          signInResponseModelFromJson(box.read(userInformation)).user!.role ==
+      if (sharedPrefbox.read(userToken) != null &&
+          signInResponseModelFromJson(sharedPrefbox.read(userInformation)).user!.role ==
               "parent") {
                   
         Get.offAllNamed(Routes.HOME);
       }
-      else if (box.read(userToken) != null &&
-          signInResponseModelFromJson(box.read(userInformation)).user!.role ==
+      else if (sharedPrefbox.read(userToken) != null &&
+          signInResponseModelFromJson(sharedPrefbox.read(userInformation)).user!.role ==
               "nany") {
         Get.offAllNamed(Routes.NANNY_HOME_PAGE);
       }  else {

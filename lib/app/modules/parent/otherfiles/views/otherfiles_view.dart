@@ -22,7 +22,7 @@ class OtherfilesView extends GetView<OtherfilesController> {
               appBar("Other Files"),
               Obx(
                 () => controller.isLoading.value != true
-                    ? Expanded(
+                    ?controller.getfiles.isNotEmpty? Expanded(
                         child: ListView.builder(
                           itemCount: controller.getfiles.length,
                           itemBuilder: (context, index) {
@@ -57,7 +57,7 @@ class OtherfilesView extends GetView<OtherfilesController> {
                           },
                         ),
                       )
-                    : const SizedBox.shrink(),
+                    :Expanded(child: Image.network("https://cdn-icons-png.freepik.com/512/7466/7466073.png",height: 100,width: 100,)): const SizedBox.shrink(),
               )
             ],
           ),

@@ -26,11 +26,11 @@ class AuthRepository {
 
       if (response.statusCode == 200) {
         var data = jsonDecode(response.body);
-        box.write(userInformation,
+        sharedPrefbox.write(userInformation,
             signInResponseModelToJson(SignInResponseModel.fromJson(data)));
-        box.write(userToken, data['token']);
+        sharedPrefbox.write(userToken, data['token']);
         EasyLoading.dismiss();
-       var role= signInResponseModelFromJson(box.read(userInformation)).user!.role;
+       var role= signInResponseModelFromJson(sharedPrefbox.read(userInformation)).user!.role;
        if(role=="parent"){
         Get.offAllNamed(Routes.HOME);
        }
@@ -65,7 +65,7 @@ class AuthRepository {
 
       if (response.statusCode == 200) {
         Utils.snakbar(title: "Otp sent", body: "An otp is sent to your email");
-        box.write(email, userEmail);
+        sharedPrefbox.write(email, userEmail);
         Get.toNamed(Routes.VERIFICATION_CODE);
         EasyLoading.dismiss();
       } else {
@@ -88,12 +88,12 @@ class AuthRepository {
       final response = await http.post(
         url,
         headers: <String, String>{'Content-Type': 'application/json'},
-        body: jsonEncode({"email": box.read(email), "otp": otp}),
+        body: jsonEncode({"email": sharedPrefbox.read(email), "otp": otp}),
       );
 
       if (response.statusCode == 200) {
         var data = jsonDecode(response.body);
-        box.write(verificationToken, data['token']);
+        sharedPrefbox.write(verificationToken, data['token']);
         Get.offAllNamed(Routes.AUTHENTICATION_SUCCESS);
         EasyLoading.dismiss();
       } else {
@@ -126,7 +126,7 @@ class AuthRepository {
         url,
         headers: <String, String>{
           'Content-Type': 'application/json',
-          'Authorization': "Bearer ${box.read(verificationToken)}"
+          'Authorization': "Bearer ${sharedPrefbox.read(verificationToken)}"
         },
         body: jsonEncode(createNewPasswordModel.toJson()),
       );

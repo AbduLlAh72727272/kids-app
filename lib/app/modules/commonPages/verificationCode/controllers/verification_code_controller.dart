@@ -14,6 +14,6 @@ class VerificationCodeController extends GetxController {
   }
 
    Future sentOtp() async {
-    await authRepository.sendOtp(box.read(email));
+    await authRepository.sendOtp(sharedPrefbox.read(email));
   }
 }

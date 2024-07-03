@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:kidslearning/app/customeWidgets/appBar.dart';
+import 'package:kidslearning/app/customeWidgets/customtext.dart';
 import 'package:kidslearning/app/data/getmodels/getFeeModel.dart';
+import 'package:kidslearning/app/resources/alignments.dart';
+import 'package:kidslearning/app/resources/colors.dart';
 import 'package:velocity_x/velocity_x.dart';
 import '../controllers/fee_details_controller.dart';
 
@@ -19,13 +23,26 @@ class FeeDetailsView extends GetView<FeeDetailsController> {
           appBar("Fee Details"),
           Obx(
             () => controller.isLoading.value != true
-                ? Expanded(
+                ? controller.getfeeSlips.isNotEmpty? Expanded(
                     child: ListView.builder(
                         itemCount: controller.getfeeSlips.length,
                         itemBuilder: (context, index) {
                           return PaymentInfoCard(
                               getFeeModel: controller.getfeeSlips[index]);
-                        }))
+                        })):Expanded(
+                          child: Column(
+                            mainAxisAlignment: maincenter,
+                              children: [
+                                Image.network("https://cdn-icons-png.freepik.com/512/7466/7466073.png",width: 100,height: 100,),
+                                20.heightBox,
+                                CustomText(
+                                      text: "No fee slip.",
+                                      fontSize: 14.sp,
+                                      color: primaycolor,
+                                      fontWeight: FontWeight.w500),
+                              ],
+                            ),
+                        )
                 : const CircularProgressIndicator(),
           )
         ],

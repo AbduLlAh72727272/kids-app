@@ -13,7 +13,7 @@ class CreatenewpasswordController extends GetxController {
   //create new password
   Future createNewPassword() async {
     authRepository.createNewPassword(CreateNewPasswordModel(
-      email: box.read(email),
+      email: sharedPrefbox.read(email),
       password: newpasswordController.value.text.toString().trim(),
       cPassword: confirmController.value.text.toString().trim()
     ));

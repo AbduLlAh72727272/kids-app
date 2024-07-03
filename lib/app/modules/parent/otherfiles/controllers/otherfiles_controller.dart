@@ -26,8 +26,8 @@ class OtherfilesController extends GetxController {
     }
   }
 
-  Future downloadFile(url,filename)async{
-    await parentRepository.downloadAndOpenPDF(url,filename);
+  Future downloadFile(url, filename) async {
+    await parentRepository.downloadAndOpenPDF(url, filename);
   }
 
   @override
@@ -36,6 +36,4 @@ class OtherfilesController extends GetxController {
     super.onInit();
     getFiles();
   }
-
-  
 }
