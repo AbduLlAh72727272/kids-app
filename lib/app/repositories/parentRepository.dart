@@ -27,7 +27,7 @@ class ParentRepository {
 
       if (response.statusCode == 200) {
         // Process the response body if needed
-print(response.body);
+
         List<GetActivitiesModel> activities =
             getActivitiesModelFromJson(response.body);
 

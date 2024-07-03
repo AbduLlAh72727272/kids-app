@@ -174,27 +174,32 @@ class ActvitiesView extends GetView<ActvitiesController> {
               Column(
                 crossAxisAlignment: crossend,
                 children: [
-                  SizedBox(
-                    width: 130.w,
-                    child: Row(
-                      mainAxisAlignment: mainend,
-                      children: [
-                        Text(
-                          "Add new Card",
-                          style: TextStyle(
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w300,
-                              color: blackcolor),
-                        ),
-                        5.widthBox,
-                        Icon(
-                          Icons.add,
-                          color: blackcolor,
-                          size: 20.sp,
-                        )
-                      ],
-                    ),
-                  ).box.white.outerShadow.padding(defaultpad).roundedSM.make(),
+                  GestureDetector(
+                    onTap: (){
+                      controller.showAddCardDialog(context);
+                    },
+                    child: SizedBox(
+                      width: 130.w,
+                      child: Row(
+                        mainAxisAlignment: mainend,
+                        children: [
+                          Text(
+                            "Add new Card",
+                            style: TextStyle(
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w300,
+                                color: blackcolor),
+                          ),
+                          5.widthBox,
+                          Icon(
+                            Icons.add,
+                            color: blackcolor,
+                            size: 20.sp,
+                          )
+                        ],
+                      ),
+                    ).box.white.outerShadow.padding(defaultpad).roundedSM.make(),
+                  ),
                 ],
               )
             ],

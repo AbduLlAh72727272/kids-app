@@ -39,7 +39,9 @@ class NanyRepository {
     final url = Uri.parse(fetchStudentsUrl);
 
     try {
-      final response = await http.get(url,headers:{  'Authorization': 'Bearer ${sharedPrefbox.read(userToken)}',} );
+      final response = await http.get(url, headers: {
+        'Authorization': 'Bearer ${sharedPrefbox.read(userToken)}',
+      });
 
       if (response.statusCode == 200) {
         List<GetStudentsModel> getStudentsModel =
