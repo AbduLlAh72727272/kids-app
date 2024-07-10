@@ -23,21 +23,29 @@ class AuthRepository {
         headers: <String, String>{'Content-Type': 'application/json'},
         body: jsonEncode(signInData.toJson()),
       );
+      print('the respone of the sign in is :${response.body}');
 
       if (response.statusCode == 200) {
         var data = jsonDecode(response.body);
-        sharedPrefbox.write(userInformation,
+        print(data['user'].runtimeType);
+        // print(data);
+        print(SignInResponseModel.fromJson(data));
+        // print(signInResponseModelToJson(SignInResponseModel.fromJson(data))
+        // .runtimeType);
+        print('save is going on');
+        await sharedPrefbox.write(userInformation,
             signInResponseModelToJson(SignInResponseModel.fromJson(data)));
-        sharedPrefbox.write(userToken, data['token']);
+        await sharedPrefbox.write(userToken, data['token']);
         EasyLoading.dismiss();
-       var role= signInResponseModelFromJson(sharedPrefbox.read(userInformation)).user!.role;
-       if(role=="parent"){
-        Get.offAllNamed(Routes.HOME);
-       }
-       else{
-        Get.offAllNamed(Routes.NANNY_HOME_PAGE);
-       }
-
+        print('save is done');
+        var role = signInResponseModelFromJson(
+          sharedPrefbox.read(userInformation).toString(),
+        ).user!.role;
+        if (role == "parent") {
+          Get.offAllNamed(Routes.HOME);
+        } else {
+          Get.offAllNamed(Routes.NANNY_HOME_PAGE);
+        }
       } else {
         EasyLoading.dismiss();
         Utils.snakbar(
@@ -46,7 +54,7 @@ class AuthRepository {
       }
     } catch (e) {
       EasyLoading.dismiss();
-
+      print(e.toString());
       throw Exception(e);
     }
   }
@@ -113,14 +121,12 @@ class AuthRepository {
   //create new password becuase the user forget the password
   Future<void> createNewPassword(
       CreateNewPasswordModel createNewPasswordModel) async {
-
-        print(createNewPasswordModel.email);
-        print(createNewPasswordModel.password);
-        print(createNewPasswordModel.cPassword);
+    print(createNewPasswordModel.email);
+    print(createNewPasswordModel.password);
+    print(createNewPasswordModel.cPassword);
     try {
       EasyLoading.show(status: "Please wait...");
       final url = Uri.parse(createNewPasswordUrl);
-    
 
       final response = await http.post(
         url,

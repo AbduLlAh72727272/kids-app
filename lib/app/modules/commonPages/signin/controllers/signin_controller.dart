@@ -7,13 +7,16 @@ class SigninController extends GetxController {
   final emailController = TextEditingController().obs;
   final passwordController = TextEditingController().obs;
   final formKey = GlobalKey<FormState>();
-  var selectedValue = 'Admin, Parent, Nanny'.obs;
+  var selectedValue = 'Parent'.obs;
 
   AuthRepository authRepository = AuthRepository();
 
   Future signInUser() async {
-    await authRepository.signInUser(SignInPostModel(
+    await authRepository.signInUser(
+      SignInPostModel(
         email: emailController.value.text.toString().trim(),
-        password: passwordController.value.text.toString().trim()));
+        password: passwordController.value.text.toString().trim(),
+      ),
+    );
   }
 }
