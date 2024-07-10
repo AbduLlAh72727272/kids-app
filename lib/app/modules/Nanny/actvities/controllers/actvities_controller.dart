@@ -46,14 +46,14 @@ class ActvitiesController extends GetxController {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Add New Card',style: TextStyle(color: blackcolor),),
+          title: const Text('Add New Card',style: TextStyle(color: blackcolor),),
           content: SingleChildScrollView(
             child: Column(
               children: [
                 TextField(
-                  style: TextStyle(color: blackcolor),
+                  style: const TextStyle(color: blackcolor),
                   controller: activityNameController,
-                  decoration: InputDecoration(labelText: 'Activity Name'),
+                  decoration: const InputDecoration(labelText: 'Activity Name'),
                   onChanged: (value) {
                     activityName.value = value;
                   },
@@ -62,13 +62,13 @@ class ActvitiesController extends GetxController {
                   children: [
                     Expanded(
                       child: TextField(
-                                style: TextStyle(color: blackcolor),
+                                style: const TextStyle(color: blackcolor),
                         controller: subactivityController,
-                        decoration: InputDecoration(labelText: 'Subactivity'),
+                        decoration: const InputDecoration(labelText: 'Subactivity'),
                       ),
                     ),
                     IconButton(
-                      icon: Icon(Icons.add),
+                      icon: const Icon(Icons.add),
                       onPressed: () {
                         addSubactivity(subactivityController.text);
                         subactivityController.clear();
@@ -79,28 +79,28 @@ class ActvitiesController extends GetxController {
                 Obx(
                   () => subactivities.isNotEmpty
                       ? Container(
-                          margin: EdgeInsets.only(top: 10),
+                          margin: const EdgeInsets.only(top: 10),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: subactivities
-                                .map((subactivity) => Text(subactivity,style: TextStyle(color: blackcolor),))
+                                .map((subactivity) => Text(subactivity,style: const TextStyle(color: blackcolor),))
                                 .toList(),
                           ),
                         )
-                      : SizedBox(),
+                      : const SizedBox(),
                 ),
               ],
             ),
           ),
           actions: [
             TextButton(
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
             ),
             TextButton(
-              child: Text('Add'),
+              child: const Text('Add'),
               onPressed: () {
                 addActivity();
                 activityNameController.clear();
